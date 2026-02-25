@@ -6,7 +6,7 @@ from pathlib import Path
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 
-from .reconcile import ReconciliationReport
+from .reconcile_compat import ReconciliationReport
 
 THIN = Border(
     left=Side(style='thin'), right=Side(style='thin'),
