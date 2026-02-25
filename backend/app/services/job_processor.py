@@ -98,7 +98,12 @@ async def _process_job_async(job_id: int):
             print(f"[worker] Job {job_id}: Phase 1 — Context extraction (page {page_num + 1})", flush=True)
 
             context, phase1 = await extract_context(renderer, cfg)
-            page_phases.append(phase1)
+            page_phases.append({
+                "phase": 1,
+                "vlm_calls": phase1.vlm_calls,
+                "duration_s": phase1.duration_s,
+                "error": phase1.error,
+            })
 
             # ── Phase 2: Coarse Detection ─────────────────────────────
             update_job(
