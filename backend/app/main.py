@@ -1,4 +1,4 @@
-"""AECAI Fixture Counter — FastAPI application."""
+"""TakeoffAI — FastAPI application."""
 
 from contextlib import asynccontextmanager
 
@@ -29,7 +29,7 @@ app = FastAPI(
 
 # CORS — allow frontend
 ALLOWED_ORIGINS = [
-    "https://takeoffai.vercel.app",
+    "https://takeoffai-seven.vercel.app",
     "http://localhost:5173",
     "http://localhost:3000",
 ]
@@ -64,4 +64,4 @@ app.include_router(jobs_router)
 
 @app.get("/api/health")
 async def health():
-    return {"status": "ok", "version": "0.1.0"}
+    return {"status": "ok", "version": "1.0.0"}
